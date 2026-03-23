@@ -215,7 +215,9 @@ let enemySprite4 = sprites.create(img`
 `, SpriteKind.Player)
 
 // Spillerens styring
-
+controller.moveSprite(mySprite)
+controller.A.isPressed()
+mySprite.setStayInScreen(true)
 // Fjendens logik
 
 // Døre logik
