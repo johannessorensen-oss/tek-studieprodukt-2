@@ -213,8 +213,11 @@ let enemySprite4 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
+
 // Spillerens styring
 
 // Fjendens logik
+
+// Døre logik
 
 // 
