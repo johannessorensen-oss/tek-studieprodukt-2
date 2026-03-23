@@ -222,4 +222,4 @@ mySprite.setStayInScreen(true)
 
 // Døre logik
 
-// 
+// spurgt de france
