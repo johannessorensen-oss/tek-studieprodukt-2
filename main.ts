@@ -221,5 +221,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
 })
 mySprite.setStayInScreen(true)
 // Fjendens logik
-function 
+function newRoom () {
+    enemySprite1.setPosition(randint(1, 124),randint(1, 124))
+}
 // Døre logik
