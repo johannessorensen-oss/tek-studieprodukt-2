@@ -158,6 +158,9 @@ mySprite.setStayInScreen(true)
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
 })
+forever(function() {
+    
+})
 // Døre logik
 
 function newRoom1() {
