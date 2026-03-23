@@ -220,24 +220,7 @@ let enemySprite4 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
-let doorSprite = sprites.create(img`
-    b b b b b b b b b b b b b b b b
-    b c b c 6 6 6 6 6 6 6 6 c b c b
-    b b c 6 6 6 6 6 6 6 6 6 6 c b b
-    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
-    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
-    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
-    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
-    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
-    b b 9 6 6 6 6 6 6 6 6 6 6 9 b b
-    b b 9 6 6 6 6 6 6 6 6 6 6 9 b b
-    b b 6 9 6 6 6 6 6 6 6 6 9 6 b b
-    b b 6 6 9 9 9 9 9 9 9 9 6 6 b b
-    b b c 6 6 6 6 6 6 6 6 6 6 c b b
-    b b b c c c c c c c c c c b b b
-    b c b b b b b b b b b b b b c b
-    b b b b b b b b b b b b b b b b
-`, SpriteKind.Food)
+let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
 
 // Spillerens styring
 controller.moveSprite(mySprite)
