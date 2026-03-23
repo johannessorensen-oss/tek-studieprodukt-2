@@ -261,5 +261,8 @@ mySprite.setStayInScreen(true)
 
 function newRoom() {
     enemySprite1.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite2.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite3.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite4.setPosition(randint(1, 124), randint(1, 124))
     doorSprite.setPosition(1,1)
 }
