@@ -277,6 +277,7 @@ function newRoom3() {
     `, SpriteKind.Enemy)
     enemySprite31.setPosition(randint(1, 124), randint(1, 124))
 }
+//nigger Lasse
 //start spil
 newRoom1()
 
