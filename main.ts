@@ -161,10 +161,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, 
     game.gameOver(false)
 })
 // Room logik
-let rumNummer = 1
+let antalFjender = 1
 sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
-    rumNummer = rumNummer - 1
-    if (rumNummer == 0) {
+    antalFjender = antalFjender - 1
+    if (antalFjender == 0) {
         let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
         doorSprite.setPosition(120, 50)
     }
