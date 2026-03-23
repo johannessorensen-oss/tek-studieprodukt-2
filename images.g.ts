@@ -3,25 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image1":
-            case "myImage":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 1 1 1 1 1 1 1 1 1 . . . . 
-. . . 1 d d 1 d d 1 d 1 . . . . 
-. . . d d d d d d d d d . . . . 
-. . . d d f f d d f f d . . . . 
-. . . f f f f f f f f f . . . . 
-. . . d d f f d d f f d . . . . 
-. . . d d d d d d d d d . . . . 
-. . . d d d f f f d d d . . . . 
-. . . . d d d d d d d . . . . . 
-. . . . . d d d d d . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
             case "image2":
             case "myImage0":return img`
 . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
@@ -194,6 +175,44 @@ f . . . . . f . . . . . . . . .
 ........................
 ........................
 ........................
+`;
+            case "image1":
+            case "myImage5":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . 1 1 1 1 1 1 1 1 1 . . . . 
+. . . 1 d d 1 d d 1 d 1 . . . . 
+. . . d d d d d d d d d . . . . 
+. . . d d f f d d f f d . . . . 
+. . . f f f f f f f f f . . . . 
+. . . d d f f d d f f d . . . . 
+. . . d d d d d d d d d . . . . 
+. . . d d d f f f d d d . . . . 
+. . . . d d d d d d d . . . . . 
+. . . . . d d d d d . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "image10":
+            case "halo dude":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 9 9 9 9 9 9 9 9 9 9 9 . . . 
+. 9 9 1 1 1 1 1 1 1 1 1 9 . . . 
+. 9 1 1 d d d d 1 d d 1 9 . . . 
+. 9 d d d f f d d f f d 9 . . . 
+. 9 f f f f f f f f f f 9 . . . 
+. 9 d d d f f d d f f d 9 . . . 
+. 9 d d d d d d d d d d 9 . . . 
+. 9 d d d d d d d d d d 9 . . . 
+. 9 d d d f f f f d d d 9 . . . 
+. 9 9 d d d d d d d d 9 9 . . . 
+. . 9 9 d d d d d d 9 9 . . . . 
+. . . 9 9 9 9 9 9 9 9 . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `;
         }
         return null;
