@@ -158,7 +158,7 @@ let enemySprite1 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
 let enemySprite2 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -176,7 +176,7 @@ let enemySprite2 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
 let enemySprite3 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -194,7 +194,7 @@ let enemySprite3 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
 let enemySprite4 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -212,14 +212,31 @@ let enemySprite4 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
 
 // Spillerens styring
 controller.moveSprite(mySprite)
-controller.A.isPressed()
+controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
+    let mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+})
 mySprite.setStayInScreen(true)
 // Fjendens logik
 
 // Døre logik
-
-// 
