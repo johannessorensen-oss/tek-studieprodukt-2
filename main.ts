@@ -158,9 +158,7 @@ mySprite.setStayInScreen(true)
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
 })
-forever(function() {
-    
-})
+
 // Døre logik
 
 function newRoom1() {
@@ -192,6 +190,11 @@ function newRoom1() {
 `, SpriteKind.Enemy)
     enemySprite11.setPosition(randint(1, 124), randint(1, 124))
     doorSprite.setPosition(1,1)
+    forever(function () {
+        enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
+        pause(2000)
+    })
+    enemySprite11.setStayInScreen(true)
 }
 
 function newRoom2() {
@@ -273,4 +276,4 @@ function newRoom3() {
 }
 //start spil
 newRoom1()
-//fuckoff
+
