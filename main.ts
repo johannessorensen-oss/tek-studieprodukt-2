@@ -124,10 +124,6 @@ scene.setBackgroundImage(img`
     777777777777777777f777777f7777777777777777eeeeeeeeeeeeeeeeeeeee777777777777ff7777777777777777777777eeffeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee777777777777
 `)
 let mySprite = sprites.create(assets.image`myImage`, SpriteKind.Player)
-let enemySprite1 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
-let enemySprite2 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
-let enemySprite3 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
-let enemySprite4 = sprites.create(img`
 
 
 let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
