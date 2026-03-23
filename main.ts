@@ -126,8 +126,6 @@ scene.setBackgroundImage(img`
 let mySprite = sprites.create(assets.image`myImage5`, SpriteKind.Player)
 
 
-let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
-
 // Spillerens styring
 controller.moveSprite(mySprite)
 function angrib() {
@@ -163,11 +161,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, 
     game.gameOver(false)
 })
 // Room logik
+let rumNummer = 1
+sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
+    rumNummer = rumNummer - 1
+    if (rumNummer == 0) {
+        let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
+        doorSprite.setPosition(120, 50)
+    }
+})
 
 function newRoom1() {
     let enemySprite11= sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
     enemySprite11.setPosition(randint(1, 124), randint(1, 124))
-    doorSprite.setPosition(1,1)
     invincibility()
     forever(function () {
         enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
