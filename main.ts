@@ -194,7 +194,7 @@ function newRoom1() {
         enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
         pause(2000)
         enemySprite11.follow(mySprite)
-        pause(1000)
+        pause(500)
         enemySprite11.unfollow()
     })
     enemySprite11.setStayInScreen(true)
