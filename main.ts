@@ -124,7 +124,7 @@ scene.setBackgroundImage(img`
     777777777777777777f777777f7777777777777777eeeeeeeeeeeeeeeeeeeee777777777777ff7777777777777777777777eeffeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee777777777777
 `)
 let mySprite = sprites.create(assets.image`myImage`, SpriteKind.Player)
-let enemySprite1 = sprites.create(img`
+let enemySprite11 = sprites.create(img`
     ........................
     ........................
     ........................
@@ -150,7 +150,7 @@ let enemySprite1 = sprites.create(img`
     ....5555555555555555....
     ........................
 `, SpriteKind.Enemy)
-let enemySprite2 = sprites.create(img`
+let enemySprite21 = sprites.create(img`
     ........................
     ........................
     ........................
@@ -176,7 +176,7 @@ let enemySprite2 = sprites.create(img`
     ........................
     ........................
 `, SpriteKind.Enemy)
-let enemySprite3 = sprites.create(img`
+let enemySprite22 = sprites.create(img`
     ........................
     ........................
     ........................
@@ -202,7 +202,7 @@ let enemySprite3 = sprites.create(img`
     ........................
     ........................
 `, SpriteKind.Enemy)
-let enemySprite4 = sprites.create(img`
+let enemySprite31 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -255,16 +255,16 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Spri
 // Døre logik
 
 function newRoom1() {
-    enemySprite1.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite11.setPosition(randint(1, 124), randint(1, 124))
     doorSprite.setPosition(1,1)
 }
 
 function newRoom2() {
-    enemySprite2.setPosition(randint(1, 124), randint(1, 124))
-    enemySprite3.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite21.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite22.setPosition(randint(1, 124), randint(1, 124))
 }
 function newRoom3() {
-    enemySprite4.setPosition(randint(1, 124), randint(1, 124))
+    enemySprite31.setPosition(randint(1, 124), randint(1, 124))
 }
 //start spil
 newRoom1()
