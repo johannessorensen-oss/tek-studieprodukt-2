@@ -123,7 +123,7 @@ scene.setBackgroundImage(img`
     77777777777777777f77777777f777777777777777eeeeeeeeeeefeeeeeeeee77777777777f77fff7777777777777777777eeeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee777777777777
     777777777777777777f777777f7777777777777777eeeeeeeeeeeeeeeeeeeee777777777777ff7777777777777777777777eeffeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee777777777777
 `)
-let mySprite = sprites.create(assets.image`myImage`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`myImage5`, SpriteKind.Player)
 
 
 let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
