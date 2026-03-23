@@ -249,7 +249,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
 })
 mySprite.setStayInScreen(true)
 // Fjendens logik
-
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
+    
+})
 // Døre logik
 
 function newRoom1() {
