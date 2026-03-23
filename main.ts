@@ -166,6 +166,7 @@ function newRoom1() {
     let enemySprite11= sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
     enemySprite11.setPosition(randint(1, 124), randint(1, 124))
     doorSprite.setPosition(1,1)
+    invincibility()
     forever(function () {
         enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
         pause(2000)
@@ -174,6 +175,11 @@ function newRoom1() {
         enemySprite11.unfollow()
     })
     enemySprite11.setStayInScreen(true)
+}
+function invincibility(){
+    mySprite.startEffect(effects.blizzard)
+    pause(2000)
+    effects.clearParticles(mySprite)
 }
 
 function newRoom2() {
@@ -186,7 +192,6 @@ function newRoom3() {
     let enemySprite31= sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
     enemySprite31.setPosition(randint(1, 124), randint(1, 124))
 }
-
 //start spil
 newRoom1()
 
