@@ -221,45 +221,48 @@ let enemySprite4 = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
 let doorSprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
+    b b b b b b b b b b b b b b b b
+    b c b c 6 6 6 6 6 6 6 6 c b c b
+    b b c 6 6 6 6 6 6 6 6 6 6 c b b
+    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
+    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
+    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
+    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
+    b b 6 6 6 6 6 6 6 6 6 6 6 6 b b
+    b b 9 6 6 6 6 6 6 6 6 6 6 9 b b
+    b b 9 6 6 6 6 6 6 6 6 6 6 9 b b
+    b b 6 9 6 6 6 6 6 6 6 6 9 6 b b
+    b b 6 6 9 9 9 9 9 9 9 9 6 6 b b
+    b b c 6 6 6 6 6 6 6 6 6 6 c b b
+    b b b c c c c c c c c c c b b b
+    b c b b b b b b b b b b b b c b
+    b b b b b b b b b b b b b b b b
 `, SpriteKind.Food)
 
 // Spillerens styring
 controller.moveSprite(mySprite)
+function angrib() {
+let projectile = sprites.createProjectileFromSprite(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . 3 3 . . . . . . .
+    . . . . . . . 3 3 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, mySprite, 50, 50)
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
-    let mySprite = sprites.create(img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `, SpriteKind.Player)
+    angrib()
 })
 mySprite.setStayInScreen(true)
 // Fjendens logik
@@ -274,6 +277,5 @@ function newRoom() {
     enemySprite4.setPosition(randint(1, 124), randint(1, 124))
     doorSprite.setPosition(1,1)
 }
-
-
-
+//start spil
+newRoom()
