@@ -154,12 +154,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
     angrib()
 })
 mySprite.setStayInScreen(true)
+
 // Fjendens logik
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
 })
 
-// Døre logik
+// Room logik
 
 function newRoom1() {
     let enemySprite11= sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
