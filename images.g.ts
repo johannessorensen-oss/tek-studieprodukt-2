@@ -60,6 +60,33 @@ f . f f 5 2 5 2 5 f . . . . f .
 . f . f . f . . . . . . . f . . 
 f . . . . . f . . . . . . . . . 
 `;
+            case "image4":
+            case "myImage2":return img`
+...5.......5.......55...
+...55.fffffffffff..5..55
+....5ff555555555fff5..5.
+.2.ff5552222222555ff.22.
+.22f55222fffff22255f22.5
+..ff522ffb1111ff225ff.55
+5ff552fb1111111bf255f55.
+5f5522f111111111f2255f..
+5f522ffff1111111df225ff.
+.f52fb111c1dd111df2255f.
+.f52ffb1b1fdcf11bf2255f5
+2f522ffbfbfb11111f2255f.
+.f5522ffffcfdb1b1f2255f.
+5ff5555fcccfcfbfbf255ff.
+5.ffff52ffffffffff25ff..
+22f555522ffffff25225f52.
+22f522222ffffff25555f522
+.2f52f22fffffff25ffff552
+..f52fffffffff225f......
+..f522fffffff2225f22..55
+22f55255522552555f.225..
+..ff5225552552ffff..22..
+555f55555fffffff.55.....
+5...ffffff....222.555...
+`;
         }
         return null;
     })
