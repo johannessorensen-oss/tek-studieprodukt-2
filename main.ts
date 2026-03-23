@@ -159,7 +159,9 @@ mySprite.setStayInScreen(true)
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
 })
-
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
+    game.gameOver(false)
+})
 // Room logik
 
 function newRoom1() {
