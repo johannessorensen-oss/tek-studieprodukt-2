@@ -273,4 +273,4 @@ function newRoom3() {
 }
 //start spil
 newRoom1()
-fuckoff
+//fuckoff
