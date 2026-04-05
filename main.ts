@@ -171,33 +171,6 @@ sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
     }
 })
 
-function newRoom1() {
-    rumNummer = 1
-    let enemySprite11= sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
-    enemySprite11.setPosition(randint(1, 124), randint(1, 124))
-    invincibility()
-    forever(function () {
-        enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
-        pause(2000)
-        enemySprite11.follow(mySprite)
-        pause(500)
-        enemySprite11.unfollow()
-    })
-    enemySprite11.setStayInScreen(true)
-}
-
-function newRoom2() {
-    rumNummer = 2
-    let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
-    let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
-    enemySprite21.setPosition(randint(1, 124), randint(1, 124))
-    enemySprite22.setPosition(randint(1, 124), randint(1, 124))
-}
-function newRoom3() {
-    let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
-    enemySprite31.setPosition(randint(1, 124), randint(1, 124))
-}
-
 function newRoom () {
     if (rumNummer == 1){
         let enemySprite11 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
@@ -214,13 +187,14 @@ function newRoom () {
 
     }else
         if (rumNummer == 2){
-            invincibility ()
+            
             let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
             let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
             enemySprite21.setPosition(randint(1, 124), randint(1, 124))
             enemySprite22.setPosition(randint(1, 124), randint(1, 124))
             enemySprite21.setStayInScreen(true)
             enemySprite22.setStayInScreen(true)
+            
             forever(function () {
                 enemySprite21.setVelocity(randint(-30, 30), randint(-30, 30))
                 pause(2000)
@@ -234,9 +208,9 @@ function newRoom () {
                 enemySprite22.unfollow()
             })
             antalFjender = 2
+            invincibility()
         } else
             if (rumNummer == 3){
-                invincibility()
                 let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
                 let enemySprite32 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
                 let enemySprite33 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
@@ -264,8 +238,11 @@ function newRoom () {
                     enemySprite33.unfollow()
                 })
                 antalFjender = 3
-
-            }
+                invincibility()
+            } else
+                if (rumNummer == 4) {
+                    game.gameOver(true)
+                }
 }    
            
 function invincibility(){
@@ -276,11 +253,11 @@ function invincibility(){
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function(sprite: Sprite, otherSprite: Sprite) {
     rumNummer = rumNummer + 1
-    newRoom ()
     sprites.destroy(doorSprite)
+    newRoom ()
     
 })
 //start spil
 newRoom()
-
+//vind spillet
 
