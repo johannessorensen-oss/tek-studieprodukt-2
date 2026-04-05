@@ -124,7 +124,7 @@ scene.setBackgroundImage(img`
     777777777777777777f777777f7777777777777777eeeeeeeeeeeeeeeeeeeee777777777777ff7777777777777777777777eeffeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee777777777777
 `)
 let mySprite = sprites.create(assets.image`myImage5`, SpriteKind.Player)
-
+let doorSprite: Sprite
 
 // Spillerens styring
 controller.moveSprite(mySprite)
@@ -162,15 +162,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, 
 })
 // Room logik
 let antalFjender = 1
+let rumNummer = 1
 sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
     antalFjender = antalFjender - 1
     if (antalFjender == 0) {
-        let doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
+        doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
         doorSprite.setPosition(120, 50)
     }
 })
 
 function newRoom1() {
+    rumNummer = 1
     let enemySprite11= sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
     enemySprite11.setPosition(randint(1, 124), randint(1, 124))
     invincibility()
@@ -183,23 +185,102 @@ function newRoom1() {
     })
     enemySprite11.setStayInScreen(true)
 }
-function invincibility(){
-    mySprite.startEffect(effects.blizzard)
-    pause(2000)
-    effects.clearParticles(mySprite)
-}
 
 function newRoom2() {
+    rumNummer = 2
     let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
     let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
     enemySprite21.setPosition(randint(1, 124), randint(1, 124))
     enemySprite22.setPosition(randint(1, 124), randint(1, 124))
 }
 function newRoom3() {
-    let enemySprite31= sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
+    let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
     enemySprite31.setPosition(randint(1, 124), randint(1, 124))
 }
+
+function newRoom () {
+    if (rumNummer == 1){
+        let enemySprite11 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
+        enemySprite11.setPosition(randint(1, 124), randint(1, 124))
+        enemySprite11.setStayInScreen(true)
+        invincibility()
+        forever(function () {
+            enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
+            pause(2000)
+            enemySprite11.follow(mySprite)
+            pause(500)
+            enemySprite11.unfollow()
+        })
+
+    }else
+        if (rumNummer == 2){
+            invincibility ()
+            let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
+            let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
+            enemySprite21.setPosition(randint(1, 124), randint(1, 124))
+            enemySprite22.setPosition(randint(1, 124), randint(1, 124))
+            enemySprite21.setStayInScreen(true)
+            enemySprite22.setStayInScreen(true)
+            forever(function () {
+                enemySprite21.setVelocity(randint(-30, 30), randint(-30, 30))
+                pause(2000)
+                enemySprite21.follow(mySprite)
+                pause(500)
+                enemySprite21.unfollow()
+                enemySprite22.setVelocity(randint(-30, 30), randint(-30, 30))
+                pause(2000)
+                enemySprite22.follow(mySprite)
+                pause(500)
+                enemySprite22.unfollow()
+            })
+            antalFjender = 2
+        } else
+            if (rumNummer == 3){
+                invincibility()
+                let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
+                let enemySprite32 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
+                let enemySprite33 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
+                enemySprite31.setPosition(randint(1, 124), randint(1, 124))
+                enemySprite32.setPosition(randint(1, 124), randint(1, 124))
+                enemySprite33.setPosition(randint(1, 124), randint(1, 124))
+                enemySprite31.setStayInScreen(true)
+                enemySprite32.setStayInScreen(true)
+                enemySprite33.setStayInScreen(true)
+                forever(function () {
+                    enemySprite31.setVelocity(randint(-30, 30), randint(-30, 30))
+                    pause(2000)
+                    enemySprite31.follow(mySprite)
+                    pause(500)
+                    enemySprite31.unfollow()
+                    enemySprite32.setVelocity(randint(-30, 30), randint(-30, 30))
+                    pause(2000)
+                    enemySprite32.follow(mySprite)
+                    pause(500)
+                    enemySprite32.unfollow()
+                    enemySprite33.setVelocity(randint(-30, 30), randint(-30, 30))
+                    pause(2000)
+                    enemySprite33.follow(mySprite)
+                    pause(500)
+                    enemySprite33.unfollow()
+                })
+                antalFjender = 3
+
+            }
+}    
+           
+function invincibility(){
+    mySprite.startEffect(effects.blizzard)
+    pause(2000)
+    effects.clearParticles(mySprite)
+}
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function(sprite: Sprite, otherSprite: Sprite) {
+    rumNummer = rumNummer + 1
+    newRoom ()
+    sprites.destroy(doorSprite)
+    
+})
 //start spil
-newRoom1()
+newRoom()
 
 
