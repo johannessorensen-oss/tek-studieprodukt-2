@@ -125,6 +125,7 @@ scene.setBackgroundImage(img`
 `)
 let mySprite = sprites.create(assets.image`myImage5`, SpriteKind.Player)
 let doorSprite: Sprite
+let invincible = 0
 
 // Spillerens styring
 controller.moveSprite(mySprite)
@@ -158,7 +159,9 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Spri
     sprites.destroy(otherSprite)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
+    if (invincible == 0) {
     game.gameOver(false)
+    }
 })
 // Room logik
 let antalFjender = 1
@@ -252,7 +255,9 @@ function newRoom () {
            
 function invincibility(){
     mySprite.startEffect(effects.blizzard)
+    invincible = 1
     pause(2000)
+    invincible = 0
     effects.clearParticles(mySprite)
 }
 
