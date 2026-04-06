@@ -269,5 +269,4 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function(sprite: Sprite, o
 })
 //start spil
 newRoom()
-//vind spillet
 
