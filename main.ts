@@ -126,7 +126,11 @@ scene.setBackgroundImage(img`
 let mySprite = sprites.create(assets.image`myImage5`, SpriteKind.Player)
 let doorSprite: Sprite
 let invincible = 0
-
+let finalBoss: Sprite
+let Boss = SpriteKind.create()
+let bossHealth = 0
+let antalFjender = 1
+let rumNummer = 1
 // Spillerens styring
 controller.moveSprite(mySprite)
 function angrib() {
@@ -157,15 +161,30 @@ mySprite.setStayInScreen(true)
 // Fjendens logik
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
+    sprites.destroy(sprite)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     if (invincible == 0) {
     game.gameOver(false)
     }
 })
+sprites.onOverlap(SpriteKind.Projectile, Boss, function (sprite: Sprite, otherSprite: Sprite) {
+    bossHealth = bossHealth - 1
+    sprites.destroy(sprite)
+    if (bossHealth == 0){
+        sprites.destroy(otherSprite)
+        antalFjender = antalFjender - 1
+    }
+})
+
 // Room logik
-let antalFjender = 1
-let rumNummer = 1
+sprites.onDestroyed(Boss, function (sprite: Sprite) {
+    antalFjender = antalFjender - 1
+    if (antalFjender == 0) {
+        doorSprite = sprites.create(assets.image`myImage1`, SpriteKind.Food)
+        doorSprite.setPosition(120, 50)
+    }
+})
 sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
     antalFjender = antalFjender - 1
     if (antalFjender == 0) {
@@ -249,8 +268,12 @@ function newRoom () {
                 invincibility()
             } else
                 if (rumNummer == 4) {
-                    game.gameOver(true)
-                }
+                    let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
+                    bossHealth = 3
+                    antalFjender = 1
+                } else
+                    if (rumNummer == 5)
+                        game.gameOver(true)
 }    
            
 function invincibility(){
