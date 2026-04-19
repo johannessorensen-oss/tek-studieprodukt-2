@@ -131,10 +131,14 @@ let Boss = SpriteKind.create()
 let bossHealth = 0
 let antalFjender = 1
 let rumNummer = 1
+let senesteX = 0
+let senesteY = 0
 // Spillerens styring
 controller.moveSprite(mySprite)
 function angrib() {
-let projectile = sprites.createProjectileFromSprite(img`
+    if (senesteX == 0 && senesteY == 0){
+    } else {
+    let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -151,13 +155,30 @@ let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, mySprite, 50, 50)
+    
+    `, mySprite, senesteX, senesteY)
+}
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
     angrib()
 })
 mySprite.setStayInScreen(true)
-
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    senesteX = -50
+    senesteY = 0
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    senesteX = 50
+    senesteY = 0
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    senesteY = -50
+    senesteX = 0
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    senesteY = 50
+    senesteX = 0
+})
 // Fjendens logik
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
@@ -271,6 +292,13 @@ function newRoom () {
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
+                    forever(function () {
+                        bossSprite41.setVelocity(randint(-30, 30), randint(-30, 30))
+                        pause(randint(1000, 2000))
+                        bossSprite41.follow(mySprite)
+                        pause(500)
+                        bossSprite41.unfollow()
+                    })
                 } else
                     if (rumNummer == 5)
                         game.gameOver(true)
