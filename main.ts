@@ -303,6 +303,7 @@ function newRoom () {
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
+                    bossSprite41.sayText("Kom an, Mr. JEJE!")
                     forever(function () {
                         bossSprite41.setVelocity(randint(-30, 30), randint(-30, 30))
                         pause(randint(1000, 2000))
