@@ -1,4 +1,5 @@
  // Visuelle elementer
+game.setGameOverMessage(false, "IT'S OVER, MR. JEJE")
  scene.screenWidth()
  scene.screenHeight()
 scene.setBackgroundImage(img`
@@ -166,28 +167,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
 mySprite.setStayInScreen(true)
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     senesteX = -150
+    senesteY = 0
 })
-controller.left.onEvent(ControllerButtonEvent.Released, function () {
-    senesteX = 0
-})
+
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     senesteX = 150
+    senesteY = 0
 })
-controller.right.onEvent(ControllerButtonEvent.Released, function () {
-    senesteX = 0
-})
+
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     senesteY = -150
+    senesteX = 0
 })
-controller.up.onEvent(ControllerButtonEvent.Released, function () {
-    senesteY = 0
-})
+
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     senesteY = 150
+    senesteX = 0
 })
-controller.down.onEvent(ControllerButtonEvent.Released, function () {
-    senesteY = 0
-})
+
 // Fjendens logik
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
@@ -206,7 +203,11 @@ sprites.onOverlap(SpriteKind.Projectile, Boss, function (sprite: Sprite, otherSp
         antalFjender = antalFjender - 1
     }
 })
-
+sprites.onOverlap(SpriteKind.Player, Boss, function (sprite: Sprite, otherSprite: Sprite) {
+    if (invincible == 0) {
+        game.gameOver(false)
+    }
+})
 // Room logik
 sprites.onDestroyed(Boss, function (sprite: Sprite) {
     antalFjender = antalFjender - 1
@@ -229,7 +230,6 @@ function newRoom () {
         let enemySprite11 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
         enemySprite11.setPosition(randint(1, 124), randint(1, 124))
         enemySprite11.setStayInScreen(true)
-        invincibility()
         forever(function () {
             enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
             pause(randint(1000, 2000))
@@ -237,7 +237,7 @@ function newRoom () {
             pause(500)
             enemySprite11.unfollow()
         })
-
+        invincibility()
     }else
         if (rumNummer == 2){
             game.splash("JEJE: The Two Towers")
@@ -301,7 +301,6 @@ function newRoom () {
             } else
                 if (rumNummer == 4) {
                     game.splash("The JEJEFather")
-                    invincibility()
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
@@ -313,6 +312,7 @@ function newRoom () {
                         pause(500)
                         bossSprite41.unfollow()
                     })
+                    invincibility()
                 } else
                     if (rumNummer == 5)
                         game.gameOver(true)
