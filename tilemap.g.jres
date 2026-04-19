@@ -4,6 +4,36 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "level1": {
+        "id": "level1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDA1MTAwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjEzMDUwODAyMDMwMjAyMDIxNDAyMDIwMzAyMDIwMjAyMDIwNTA4MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjA1MTAwMjAyMGEwNzA2MDkwNjA2MDkwNjA2MDkwNjA0MDUwODAzMDIwNTEwMDIwMjAyMDIwMjAyMDIwMjBmMDUwNTA4MDIwMjA1MDgwMjAyMDMwMjAyMDIwMjAyMDIwNTA1MTAwMjAyMDUwODAyMDIwMjAyMDIwMjAyMDIwMjBhMDUwODAyMDIwNTEwMDIwMjAyMDkwOTA5MDkwMjAzMDUwNTA4MDIwMjA1MDgwMjAyMDIwNTBjMGIwODAyMDIwNTA1MTAwMjAyMDUwODAyMDIwMjA1MGUwZDA4MDIwMjBhMDUwODAyMDIwNTA4MDIwMjAyMDUwYTEwMDgwMjAyMDUwNTA4MDIwMjA5MDkwMjAzMDIwNTBhMTAwODAyMDIwNTA1MTAwMjAyMDIwMjAyMDIwMjA1MGExMDA4MDIwMjBhMDUwODAyMDIwMzAyMDIwMjAyMDUwYTEwMDgwMzAyMDUwNTA4MDIwMTAyMDIwMjAyMDIwNTBhMTAwODAyMDIwNTA1MTAwMzExMTExMTExMTEwMzE1MDYwNjE1MTIwMjBhMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.dungeon.chestOpen",
+            "sprites.dungeon.floorDarkDiamond",
+            "sprites.dungeon.floorDark3",
+            "sprites.dungeon.greenOuterNorthEast",
+            "sprites.dungeon.greenOuterEast0",
+            "sprites.dungeon.greenOuterNorth0",
+            "sprites.dungeon.greenOuterNorthWest",
+            "sprites.dungeon.greenOuterWest1",
+            "sprites.dungeon.greenOuterNorth2",
+            "sprites.dungeon.greenOuterEast2",
+            "sprites.dungeon.greenInnerNorthEast",
+            "sprites.dungeon.greenInnerNorthWest",
+            "sprites.dungeon.greenInnerSouthEast",
+            "sprites.dungeon.greenInnerSouthWest",
+            "sprites.dungeon.greenSwitchUp",
+            "sprites.dungeon.greenOuterWest2",
+            "sprites.dungeon.floorDark5",
+            "sprites.dungeon.stairSouth",
+            "sprites.dungeon.doorOpenNorth",
+            "sprites.dungeon.collectibleInsignia",
+            "sprites.dungeon.greenSwitchDown"
+        ],
+        "displayName": "level2"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
