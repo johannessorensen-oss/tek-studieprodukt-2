@@ -22,25 +22,6 @@ d d d d d d d d d d d d d d d d
 d d d d d d d d d d d d d d d d 
 . d d d d d d d d d d d d d d . 
 `;
-            case "image3":
-            case "myImage1":return img`
-. . . . . f . f . . . . . . . . 
-. . . . f . . f . . . . . . . . 
-. . . f . . f . . . . . f . . . 
-. . . . f . . f . . . . . f . . 
-. . . . f f f f f . . . f . . . 
-. . . f f 5 2 5 f f . f . . . . 
-. . . f 5 2 5 2 5 f f . f . . . 
-. f . f 2 5 f 5 2 f . . . f . . 
-f . f f 5 2 5 2 5 f . . . . f . 
-. . . f f 5 2 5 f f . . . . . . 
-. . . . f f f f f . f . . . . . 
-. . . . . . f . . . . f . f . . 
-. . . . . f . . . . . f f . f . 
-. . f . f . . . . . . . . . f . 
-. f . f . f . . . . . . . f . . 
-f . . . . . f . . . . . . . . . 
-`;
             case "image4":
             case "myImage2":return img`
 ...5.......5.......55...
@@ -278,6 +259,44 @@ f f 2 2 2 2 f b b b b f c c . .
 .......2.....222...2....
 ........................
 ........................
+`;
+            case "image3":
+            case "myImage1":return img`
+. f . . . f . f . . . . . . f . 
+f . f . 2 . . f . 5 . . . f . . 
+. f . f . . f . 2 . 2 . f . . 5 
+. 2 . . f f f f f . . 5 . f . . 
+f . f f e e e e e f f 2 f . f . 
+. f f e e 5 2 5 e e f f . . . f 
+5 . f e 5 2 5 2 5 e f f f . 5 . 
+. f f e 2 5 f 5 2 e f f . f . . 
+f . f e 5 2 5 2 5 e f f . . f . 
+. . f e e 5 2 5 e e f f . . . 5 
+5 . f f e e e e e f f f . . 2 . 
+. 2 2 f f f f f f f f f . f . f 
+. . . . . f . . . . . f f . f . 
+. . f . 2 . . 2 . 5 . 5 . . f . 
+. f . f . f . . 5 . 2 . . f . . 
+f . 5 . . . f . . . . . f . . . 
+`;
+            case "image13":
+            case "haj rum2":return img`
+....................ccfff...........
+..........fffffffffcbbbbf...........
+.........fbbbbbbbbbfffbf............
+.........fbb111b2fbbbbff............
+.........fb11111ffbbbbbcff..........
+.........22c2c211bbcbcbcccf.........
+..........f21c121bbbcbcbcccf...ccccc
+............c3332bbbcbcbccccfccddbbc
+...........c333c2bbbbbbbcccccbddbcc.
+...........c331c11bbbbbcccccccbbcc..
+..........cc132211bbbbccccccffbccf..
+..........2221121cbbbcccccbbc.fccf..
+...........c21121cbbbfdddddc..fbbcf.
+............2cc2ffbdbbfdddc....fbbf.
+............2..2..fbdbbfcc......fbbf
+............2..2...fffff.........fff
 `;
         }
         return null;

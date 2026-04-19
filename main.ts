@@ -241,8 +241,8 @@ function newRoom () {
     }else
         if (rumNummer == 2){
             game.splash("JEJE: The Two Towers")
-            let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
-            let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
+            let enemySprite21 = sprites.create(assets.image`myImage4`, SpriteKind.Enemy)
+            let enemySprite22 = sprites.create(assets.image`haj rum2`, SpriteKind.Enemy)
             enemySprite21.setPosition(randint(1, 124), randint(1, 124))
             enemySprite22.setPosition(randint(1, 124), randint(1, 124))
             enemySprite21.setStayInScreen(true)
