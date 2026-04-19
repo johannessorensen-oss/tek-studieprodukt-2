@@ -301,6 +301,7 @@ function newRoom () {
             } else
                 if (rumNummer == 4) {
                     game.splash("The JEJEFather")
+                    invincibility()
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
