@@ -164,20 +164,28 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
 })
 mySprite.setStayInScreen(true)
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    senesteX = -50
-    senesteY = 0
+    senesteX = -150
+})
+controller.left.onEvent(ControllerButtonEvent.Released, function () {
+    senesteX = 0
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    senesteX = 50
-    senesteY = 0
+    senesteX = 150
+})
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    senesteX = 0
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    senesteY = -50
-    senesteX = 0
+    senesteY = -150
+})
+controller.up.onEvent(ControllerButtonEvent.Released, function () {
+    senesteY = 0
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    senesteY = 50
-    senesteX = 0
+    senesteY = 150
+})
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
+    senesteY = 0
 })
 // Fjendens logik
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
@@ -216,6 +224,7 @@ sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
 
 function newRoom () {
     if (rumNummer == 1){
+        game.splash("Første Rum")
         let enemySprite11 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
         enemySprite11.setPosition(randint(1, 124), randint(1, 124))
         enemySprite11.setStayInScreen(true)
@@ -230,7 +239,7 @@ function newRoom () {
 
     }else
         if (rumNummer == 2){
-            
+            game.splash("Andet Rum")
             let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
             let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
             enemySprite21.setPosition(randint(1, 124), randint(1, 124))
@@ -255,6 +264,7 @@ function newRoom () {
             invincibility()
         } else
             if (rumNummer == 3){
+                game.splash("Tredje rum")
                 let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
                 let enemySprite32 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
                 let enemySprite33 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
@@ -289,6 +299,7 @@ function newRoom () {
                 invincibility()
             } else
                 if (rumNummer == 4) {
+                    game.splash("Tid til bossen!")
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
