@@ -133,6 +133,7 @@ let antalFjender = 1
 let rumNummer = 1
 let senesteX = 0
 let senesteY = 0
+game.splash("The Binding of JEJE")
 // Spillerens styring
 controller.moveSprite(mySprite)
 function angrib() {
@@ -224,7 +225,7 @@ sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
 
 function newRoom () {
     if (rumNummer == 1){
-        game.splash("Første Rum")
+        game.splash("Return of the JEJE")
         let enemySprite11 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
         enemySprite11.setPosition(randint(1, 124), randint(1, 124))
         enemySprite11.setStayInScreen(true)
@@ -239,7 +240,7 @@ function newRoom () {
 
     }else
         if (rumNummer == 2){
-            game.splash("Andet Rum")
+            game.splash("JEJE: The Two Towers")
             let enemySprite21 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
             let enemySprite22 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
             enemySprite21.setPosition(randint(1, 124), randint(1, 124))
@@ -264,7 +265,7 @@ function newRoom () {
             invincibility()
         } else
             if (rumNummer == 3){
-                game.splash("Tredje rum")
+                game.splash("JEJE the Third")
                 let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
                 let enemySprite32 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
                 let enemySprite33 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
@@ -299,11 +300,11 @@ function newRoom () {
                 invincibility()
             } else
                 if (rumNummer == 4) {
-                    game.splash("Tid til bossen!")
+                    game.splash("The JEJEFather")
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
-                    bossSprite41.sayText("Kom an, Mr. JEJE!")
+                    bossSprite41.sayText("KOM AN, MR. JEJE!")
                     forever(function () {
                         bossSprite41.setVelocity(randint(-30, 30), randint(-30, 30))
                         pause(randint(1000, 2000))
