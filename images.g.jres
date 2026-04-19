@@ -49,6 +49,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level 2"
     },
+    "image9": {
+        "data": "hwQQABAAAADw///MzP8AAPD/z7z7/w8A/8y8sSEv8gDPPLO7/y8iD8/Mu7v/LyIPAMC8uyEvIiIAPLOx/P8iIgDMu7u7u7IPAMDMvLu7sg8A8P+7vLsiDwDwu8u8uywAAL/LzPz/DwAAvLzLzMwAAPC7zLsMwAAA8MvMzAAAAADwDAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage"
+    },
+    "image12": {
+        "data": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICIgAAAAAAAAAAAAFV8gAAAAAAAAIiJS8isgAAAAAFAi3V0h8l8iIgAAACD1//+/8isCAgAAACD//8/MEV8iAgAAAPL//y/CvSICAAAAAPL//8/MKyIiAgAAAPL//8/MvyIiAgAAAPL//y/CKyIiIgAAACD//8/MHV8iIAAAACD1//+/8isgIgAAAFAi3V0h8l8AAgAAAAAAIiJS8isgAAAAAAAAAAAAEl8iAgAAAAAAAAAAJSICIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage4"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",
