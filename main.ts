@@ -134,9 +134,11 @@ let antalFjender = 1
 let rumNummer = 1
 let senesteX = 0
 let senesteY = 0
+let projectileCount = 0
 game.splash("The Legend of JEJE")
 // Spillerens styring
 controller.moveSprite(mySprite)
+
 function angrib() {
     if (senesteX == 0 && senesteY == 0){
     } else {
@@ -162,9 +164,17 @@ function angrib() {
     }
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
+    if (projectileCount == 3){
+    }else {
     angrib()
+    }
 })
-
+sprites.onCreated(SpriteKind.Projectile, function (sprite: Sprite) {
+    projectileCount = projectileCount + 1
+})
+sprites.onDestroyed(SpriteKind.Projectile, function (sprite: Sprite) {
+    projectileCount = projectileCount - 1
+})
 mySprite.setStayInScreen(true)
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     senesteX = -150
@@ -340,12 +350,12 @@ function invincibility(){
     mySprite.startEffect(effects.blizzard)
     invincible = 1
     controller.moveSprite(mySprite, 0, 0)
-    pause(500)
     mySprite.sayText("3")
     pause(500)
     mySprite.sayText("2")
     pause(500)
-    mySprite.sayText("1", 333)
+    mySprite.sayText("1", 500)
+    pause(500)
     controller.moveSprite(mySprite)
     pause (2000)
     invincible = 0
