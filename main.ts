@@ -159,11 +159,12 @@ function angrib() {
     . . . . . . . . . . . . . . . .
     
     `, mySprite, senesteX, senesteY)
-}
+    }
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
     angrib()
 })
+
 mySprite.setStayInScreen(true)
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     senesteX = -150
@@ -190,11 +191,13 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Spri
     sprites.destroy(otherSprite)
     sprites.destroy(sprite)
 })
+
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     if (invincible == 0) {
     game.gameOver(false)
     }
 })
+
 sprites.onOverlap(SpriteKind.Projectile, Boss, function (sprite: Sprite, otherSprite: Sprite) {
     bossHealth = bossHealth - 1
     sprites.destroy(sprite)
@@ -203,11 +206,13 @@ sprites.onOverlap(SpriteKind.Projectile, Boss, function (sprite: Sprite, otherSp
         antalFjender = antalFjender - 1
     }
 })
+
 sprites.onOverlap(SpriteKind.Player, Boss, function (sprite: Sprite, otherSprite: Sprite) {
     if (invincible == 0) {
         game.gameOver(false)
     }
 })
+
 // Room logik
 sprites.onDestroyed(Boss, function (sprite: Sprite) {
     antalFjender = antalFjender - 1
@@ -216,6 +221,7 @@ sprites.onDestroyed(Boss, function (sprite: Sprite) {
         doorSprite.setPosition(120, 50)
     }
 })
+
 sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
     antalFjender = antalFjender - 1
     if (antalFjender == 0) {
@@ -335,6 +341,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function(sprite: Sprite, o
     newRoom ()
     
 })
+
 //start spil
 newRoom()
 
