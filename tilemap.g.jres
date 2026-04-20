@@ -129,10 +129,9 @@
     "level7": {
         "id": "level7",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAwYTAwMDgwMDEwMTAxMDEwMTAwYjE5MWExYjFjMTAwZjBmMTAxMDBiMWQxZTFmMjAxMDEwMTAxMDEwMGIyMTIyMjAxYTEwMTAxMDEwMDIwODA3MWYyMDIxMGMwYzEwMGMwMzA5MDYwYjBhMGIwMTEwMTAwMTA0MGUwNTE3MTYxNTEwMGYxMDAxMDEwYjE4MTgwZDE0MTAxMDEwMDEwMTBhMTExMjEyMTMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "data": "MTAwYTAwMDgwMDBlMGUwZTBlMGUwYTE3MTgxOTFhMGUyMTIxMGUwZTBhMWIxYzFkMWUwZTBlMGUwZTBlMGExZjIwMWUxODBlMGUwZTBlMDEwNzA2MWQxZTFmMGIwYjBlMGIwMjA4MDUwYTA5MGEyMTBlMGUyMTAzMGQwNDE1MTQxMzBlMjEwZTIxMjEwYTE2MTYwYzEyMGUwZTBlMjEyMTA5MGYxMDEwMTEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
         "tileset": [
             "myTiles.transparency16",
-            "sprites.dungeon.darkGroundNorthWest1",
             "sprites.dungeon.purpleInnerNorthWest",
             "sprites.dungeon.purpleOuterEast0",
             "sprites.dungeon.purpleInnerSouthWest",
@@ -146,7 +145,6 @@
             "sprites.dungeon.floorMixed",
             "sprites.dungeon.chestOpen",
             "sprites.dungeon.purpleSwitchDown",
-            "sprites.dungeon.hazardHole",
             "sprites.dungeon.hazardLava0",
             "sprites.skillmap.islandTile6",
             "sprites.skillmap.islandTile7",
@@ -165,7 +163,8 @@
             "sprites.builtin.crowd6",
             "sprites.builtin.crowd7",
             "sprites.builtin.crowd8",
-            "sprites.builtin.crowd9"
+            "sprites.builtin.crowd9",
+            "sprites.dungeon.floorLightMoss"
         ],
         "displayName": "Boss Level"
     },
