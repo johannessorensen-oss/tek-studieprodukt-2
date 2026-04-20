@@ -129,7 +129,6 @@ let doorSprite: Sprite
 let invincible = 0
 let finalBoss: Sprite
 let Boss = SpriteKind.create()
-let Door = SpriteKind.create
 let bossHealth = 0
 let antalFjender = 1
 let rumNummer = 1
