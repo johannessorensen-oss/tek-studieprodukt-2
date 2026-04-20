@@ -321,7 +321,10 @@ function newRoom () {
 function invincibility(){
     mySprite.startEffect(effects.blizzard)
     invincible = 1
+    controller.moveSprite(mySprite, 0, 0)
     pause(2000)
+    controller.moveSprite(mySprite)
+    pause (2000)
     invincible = 0
     effects.clearParticles(mySprite)
 }
