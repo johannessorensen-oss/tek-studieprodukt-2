@@ -335,7 +335,12 @@ function invincibility(){
     mySprite.startEffect(effects.blizzard)
     invincible = 1
     controller.moveSprite(mySprite, 0, 0)
-    pause(1000)
+    pause(500)
+    mySprite.sayText("3")
+    pause(500)
+    mySprite.sayText("2")
+    pause(500)
+    mySprite.sayText("1", 333)
     controller.moveSprite(mySprite)
     pause (2000)
     invincible = 0
