@@ -1,4 +1,4 @@
- // Visuelle elementer
+ // Visuelle og funktionelle elementer
 game.setGameOverMessage(false, "IT'S OVER, MR. JEJE")
  scene.screenWidth()
  scene.screenHeight()
@@ -134,7 +134,7 @@ let antalFjender = 1
 let rumNummer = 1
 let senesteX = 0
 let senesteY = 0
-game.splash("The Binding of JEJE")
+game.splash("The Legend of JEJE")
 // Spillerens styring
 controller.moveSprite(mySprite)
 function angrib() {
@@ -237,6 +237,7 @@ function newRoom () {
         enemySprite11.setPosition(randint(1, 124), randint(1, 124))
         enemySprite11.setStayInScreen(true)
         forever(function () {
+            pause(randint(500, 1000))
             enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
             pause(randint(1000, 2000))
             enemySprite11.follow(mySprite)
@@ -254,6 +255,7 @@ function newRoom () {
             enemySprite21.setStayInScreen(true)
             enemySprite22.setStayInScreen(true)
             forever(function () {
+                pause(randint(500, 1000))
                 enemySprite21.setVelocity(randint(-30, 30), randint(-30, 30))
                 pause(randint(1000, 2000))
                 enemySprite21.follow(mySprite)
@@ -261,6 +263,7 @@ function newRoom () {
                 enemySprite21.unfollow()
             })
             forever(function () {
+                pause(randint(500, 1000))
                 enemySprite22.setVelocity(randint(-30, 30), randint(-30, 30))
                 pause(randint(1000, 2000))
                 enemySprite22.follow(mySprite)
@@ -282,6 +285,7 @@ function newRoom () {
                 enemySprite32.setStayInScreen(true)
                 enemySprite33.setStayInScreen(true)
                 forever(function () {
+                    pause(randint (500,1000))
                     enemySprite31.setVelocity(randint(-30, 30), randint(-30, 30))
                     pause(randint(1000,2000))
                     enemySprite31.follow(mySprite)
@@ -289,6 +293,7 @@ function newRoom () {
                     enemySprite31.unfollow()
                 })
                 forever(function (){
+                    pause(randint(500, 1000))
                     enemySprite32.setVelocity(randint(-30, 30), randint(-30, 30))
                     pause(randint(1000, 2000))
                     enemySprite32.follow(mySprite)
@@ -296,6 +301,7 @@ function newRoom () {
                     enemySprite32.unfollow()
                 })
                 forever(function (){
+                    pause(randint(500, 1000))
                     enemySprite33.setVelocity(randint(-30, 30), randint(-30, 30))
                     pause(randint(1000, 2000))
                     enemySprite33.follow(mySprite)
@@ -310,8 +316,9 @@ function newRoom () {
                     let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
                     bossHealth = 3
                     antalFjender = 1
-                    bossSprite41.sayText("KOM AN, MR. JEJE!")
+                    bossSprite41.sayText("KOM AN, MR. JEJE!", 1000)
                     forever(function () {
+                        pause(randint(500, 1000))
                         bossSprite41.setVelocity(randint(-30, 30), randint(-30, 30))
                         pause(randint(1000, 2000))
                         bossSprite41.follow(mySprite)
@@ -328,7 +335,7 @@ function invincibility(){
     mySprite.startEffect(effects.blizzard)
     invincible = 1
     controller.moveSprite(mySprite, 0, 0)
-    pause(2000)
+    pause(1000)
     controller.moveSprite(mySprite)
     pause (2000)
     invincible = 0
