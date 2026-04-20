@@ -135,6 +135,7 @@ let rumNummer = 1
 let senesteX = 0
 let senesteY = 0
 let projectileCount = 0
+let projectile: Sprite
 game.splash("The Legend of JEJE")
 // Spillerens styring
 controller.moveSprite(mySprite)
@@ -164,7 +165,7 @@ function angrib() {
     }
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
-    if (projectileCount == 3){
+    if (projectileCount == 3 ||invincible == 1 ){
     }else {
     angrib()
     }
@@ -348,6 +349,7 @@ function newRoom () {
            
 function invincibility(){
     mySprite.startEffect(effects.blizzard)
+    mySprite.setImage(assets.image`halo dude`)
     invincible = 1
     controller.moveSprite(mySprite, 0, 0)
     mySprite.sayText("3")
@@ -358,6 +360,7 @@ function invincibility(){
     pause(500)
     controller.moveSprite(mySprite)
     pause (2000)
+    mySprite.setImage(assets.image`myImage5`)
     invincible = 0
     effects.clearParticles(mySprite)
 }
@@ -365,6 +368,7 @@ function invincibility(){
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function(sprite: Sprite, otherSprite: Sprite) {
     rumNummer = rumNummer + 1
     sprites.destroy(doorSprite)
+    sprites.destroy(projectile)
     newRoom ()
     
 })
