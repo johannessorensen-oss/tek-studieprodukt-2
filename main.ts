@@ -248,6 +248,7 @@ function newRoom () {
     }else
         if (rumNummer == 2){
             game.splash("JEJE: The Two Towers")
+            tiles.setCurrentTilemap(tilemap`level3`)
             let enemySprite21 = sprites.create(assets.image`myImage4`, SpriteKind.Enemy)
             let enemySprite22 = sprites.create(assets.image`haj rum2`, SpriteKind.Enemy)
             enemySprite21.setPosition(randint(1, 124), randint(1, 124))
@@ -275,9 +276,11 @@ function newRoom () {
         } else
             if (rumNummer == 3){
                 game.splash("JEJE the Third")
-                let enemySprite31 = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
-                let enemySprite32 = sprites.create(assets.image`dooode2`, SpriteKind.Enemy)
-                let enemySprite33 = sprites.create(assets.image`dooode3`, SpriteKind.Enemy)
+
+              tiles.setCurrentTilemap(tilemap`level5`)
+                let enemySprite31 = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
+                let enemySprite32 = sprites.create(assets.image`myImage6`, SpriteKind.Enemy)
+                let enemySprite33 = sprites.create(assets.image`myImage7`, SpriteKind.Enemy)
                 enemySprite31.setPosition(randint(1, 124), randint(1, 124))
                 enemySprite32.setPosition(randint(1, 124), randint(1, 124))
                 enemySprite33.setPosition(randint(1, 124), randint(1, 124))
@@ -313,7 +316,9 @@ function newRoom () {
             } else
                 if (rumNummer == 4) {
                     game.splash("The JEJEFather")
-                    let bossSprite41 = sprites.create(assets.image`dooode3`,Boss)
+
+                  tiles.setCurrentTilemap(tilemap`Boss Level`)
+                    let bossSprite41 = sprites.create(assets.image`The Boss`,Boss)
                     bossHealth = 3
                     antalFjender = 1
                     bossSprite41.sayText("KOM AN, MR. JEJE!", 1000)
