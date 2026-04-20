@@ -1,5 +1,7 @@
  // Visuelle og funktionelle elementer
 game.setGameOverMessage(false, "IT'S OVER, MR. JEJE")
+game.setGameOverMessage(true, "YOU WIN, MR. JEJE")
+
  scene.screenWidth()
  scene.screenHeight()
 scene.setBackgroundImage(img`
