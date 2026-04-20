@@ -129,6 +129,7 @@ let doorSprite: Sprite
 let invincible = 0
 let finalBoss: Sprite
 let Boss = SpriteKind.create()
+let Door = SpriteKind.create
 let bossHealth = 0
 let antalFjender = 1
 let rumNummer = 1
@@ -198,6 +199,14 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 // Fjendens logik
+function enemyMove(enemySprite: Sprite) {
+    pause(randint(500, 1000))
+    enemySprite.setVelocity(randint(-30, 30), randint(-30, 30))
+    pause(randint(1000, 2000))
+    enemySprite.follow(mySprite)
+    pause(500)
+    enemySprite.unfollow()
+}
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(otherSprite)
     sprites.destroy(sprite)
@@ -240,99 +249,46 @@ sprites.onDestroyed(SpriteKind.Enemy, function(sprite: Sprite) {
         doorSprite.setPosition(120, 50)
     }
 })
+function createSprite (image: Image){
+    let sprite = sprites.create(image, SpriteKind.Enemy)
+    sprite.setPosition(randint(1, 124), randint(1, 124))
+    sprite.setStayInScreen(true)
+    forever(function () {
+        enemyMove(sprite)
+    })
+    return sprite
+}
 
 function newRoom () {
     if (rumNummer == 1){
         game.splash("Return of the JEJE")
-        let enemySprite11 = sprites.create(assets.image`dooooode`, SpriteKind.Enemy)
-        enemySprite11.setPosition(randint(1, 124), randint(1, 124))
-        enemySprite11.setStayInScreen(true)
-        forever(function () {
-            pause(randint(500, 1000))
-            enemySprite11.setVelocity(randint(-30, 30), randint(-30, 30))
-            pause(randint(1000, 2000))
-            enemySprite11.follow(mySprite)
-            pause(500)
-            enemySprite11.unfollow()
-        })
+        let enemySprite11 = createSprite (assets.image`dooooode`)
         invincibility()
     }else
         if (rumNummer == 2){
             game.splash("JEJE: The Two Towers")
             tiles.setCurrentTilemap(tilemap`level3`)
-            let enemySprite21 = sprites.create(assets.image`myImage4`, SpriteKind.Enemy)
-            let enemySprite22 = sprites.create(assets.image`haj rum2`, SpriteKind.Enemy)
-            enemySprite21.setPosition(randint(1, 124), randint(1, 124))
-            enemySprite22.setPosition(randint(1, 124), randint(1, 124))
-            enemySprite21.setStayInScreen(true)
-            enemySprite22.setStayInScreen(true)
-            forever(function () {
-                pause(randint(500, 1000))
-                enemySprite21.setVelocity(randint(-30, 30), randint(-30, 30))
-                pause(randint(1000, 2000))
-                enemySprite21.follow(mySprite)
-                pause(500)
-                enemySprite21.unfollow()
-            })
-            forever(function () {
-                pause(randint(500, 1000))
-                enemySprite22.setVelocity(randint(-30, 30), randint(-30, 30))
-                pause(randint(1000, 2000))
-                enemySprite22.follow(mySprite)
-                pause(500)
-                enemySprite22.unfollow()
-            })
+            let enemySprite21 = createSprite(assets.image`myImage4`)
+            let enemySprite22 = createSprite(assets.image`haj rum2`)
             antalFjender = 2
             invincibility()
         } else
             if (rumNummer == 3){
                 game.splash("JEJE the Third")
-
-              tiles.setCurrentTilemap(tilemap`level5`)
-                let enemySprite31 = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
-                let enemySprite32 = sprites.create(assets.image`myImage6`, SpriteKind.Enemy)
-                let enemySprite33 = sprites.create(assets.image`myImage7`, SpriteKind.Enemy)
-                enemySprite31.setPosition(randint(1, 124), randint(1, 124))
-                enemySprite32.setPosition(randint(1, 124), randint(1, 124))
-                enemySprite33.setPosition(randint(1, 124), randint(1, 124))
-                enemySprite31.setStayInScreen(true)
-                enemySprite32.setStayInScreen(true)
-                enemySprite33.setStayInScreen(true)
-                forever(function () {
-                    pause(randint (500,1000))
-                    enemySprite31.setVelocity(randint(-30, 30), randint(-30, 30))
-                    pause(randint(1000,2000))
-                    enemySprite31.follow(mySprite)
-                    pause(500)
-                    enemySprite31.unfollow()
-                })
-                forever(function (){
-                    pause(randint(500, 1000))
-                    enemySprite32.setVelocity(randint(-30, 30), randint(-30, 30))
-                    pause(randint(1000, 2000))
-                    enemySprite32.follow(mySprite)
-                    pause(randint(1000, 2000))
-                    enemySprite32.unfollow()
-                })
-                forever(function (){
-                    pause(randint(500, 1000))
-                    enemySprite33.setVelocity(randint(-30, 30), randint(-30, 30))
-                    pause(randint(1000, 2000))
-                    enemySprite33.follow(mySprite)
-                    pause(500)
-                    enemySprite33.unfollow()
-                })
+                tiles.setCurrentTilemap(tilemap`level5`)
+                let enemySprite31 = createSprite(assets.image`myImage`)
+                let enemySprite32 = createSprite(assets.image`myImage6`)
+                let enemySprite33 = createSprite(assets.image`myImage7`)
                 antalFjender = 3
                 invincibility()
             } else
                 if (rumNummer == 4) {
                     game.splash("The JEJEFather")
-
                   tiles.setCurrentTilemap(tilemap`Boss Level`)
                     let bossSprite41 = sprites.create(assets.image`The Boss`,Boss)
                     bossHealth = 3
                     antalFjender = 1
-                    bossSprite41.sayText("KOM AN, MR. JEJE!", 1000)
+                    bossSprite41.sayText("KOM AN, MR. JEJE!", 2000)
                     forever(function () {
                         pause(randint(500, 1000))
                         bossSprite41.setVelocity(randint(-30, 30), randint(-30, 30))
